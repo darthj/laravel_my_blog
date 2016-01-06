@@ -16,14 +16,17 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('/{name}', function($name)
+Route::get('/resume', function()
 {
-	if ($name == 'portfolio'){
-		return "This is my portfolio!!!";
-	}else if ($name == 'resume'){
+	return "This is my resume!!!";
+});
 
-		return "This is my resume!!!";
-	}else {
-		return "Hello Kosher B!!";
-	}	
+Route::get('/portfolio', function()
+{
+	return "This is my portfolio!!!";
+});
+
+Route::get('/sayhello/{name?}', function($name = 'KosherB')
+{		
+	return "Hello $name!";	
 });
