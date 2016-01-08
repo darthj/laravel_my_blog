@@ -30,7 +30,7 @@ class HomeController extends BaseController {
 		return View::make('portfolio');
 	}
 
-	public function sayHelllo($name = 'KosherB')
+	public function sayHello($name = 'KosherB')
 	{		
 		return "Hello $name!";	
 	}
