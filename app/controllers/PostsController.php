@@ -9,7 +9,8 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return 'all posts';
+		$posts = Post::all();
+		return View::make('posts.index')->with('posts', $posts);
 	}
 
 
@@ -31,7 +32,18 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		return Redirect::back()->withInput();
+		$post = new Post();
+		$post->title = Input::get('title');
+		$post->content = Input::get('content');
+		$post->user_id = Input::get('user_id');
+
+		$result = $post->save();
+		
+		if($result){
+			return Redirect::action('PostsController@index');
+		} else {
+			return Redirect::back()->withInput;
+		}
 	}
 
 
@@ -43,7 +55,8 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return "show specific post for id";
+		$post = Post::find($id);
+		return View::make('posts.show')->with('post', $post);
 	} 
 
 
@@ -55,7 +68,8 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		return "edit form for post";
+		$post = POST::find($id);
+		return View::make('posts.edit')->with('post', $post);
 	}
 
 
@@ -67,7 +81,12 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		return "update posts id";
+		$post = Post::find($id);
+		$post->title = Input::get('title');
+		$post->content = Input::get('content');
+		$post->save();
+
+		return View::make('posts.show')->with('post', $post);
 	}
 
 
@@ -79,7 +98,8 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		return "destroy posts";
+		$post = Post::find($id);
+		$post->delete();
 	}
 
 
