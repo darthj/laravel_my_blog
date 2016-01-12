@@ -25,6 +25,8 @@ Route::get('/rolldice/{guess}', 'HomeController@rollDice');
 
 Route::resource('/posts', 'PostsController');
 
+Route::get('/contact', 'HomeController@showContact');
+
 Route::get('orm-test', function ()
 {
  	// test code

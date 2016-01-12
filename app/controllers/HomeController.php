@@ -35,15 +35,12 @@ class HomeController extends BaseController {
 		return "Hello $name!";	
 	}
 
-	public function sayName($name = 'KosherB')
+	public function showContact()
 	{
-	    if ($name == "Chris") {
-	        return Redirect::to('/');
-	    } else {
-	        $data = array('name' => $name);
-	        return View::make('my-first-view')->with($data);
-	    }
+	
+        return View::make('contact');
 	}
+
 
 	public function rollDice($guess)
 	{

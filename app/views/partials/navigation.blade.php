@@ -16,17 +16,20 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{{{ action('HomeController@showWelcome')}}}">Home</a>
-                    </li>
-                    <li>
                         <a href="{{{ action('HomeController@showResume')}}}">Resume</a>
                     </li>
                     <li>
                         <a href="{{{ action('HomeController@showPortfolio')}}}">Portfolio</a>
                     </li>
-                    {{-- <li>
-                        <a href="">Contact</a>
-                    </li> --}}
+                    <li>
+                        <a href="{{{ action('PostsController@index')}}}">Blog</a>
+                    </li>
+                    <li>
+                        <a href="{{{ action('PostsController@create')}}}">Create</a>
+                    </li>
+                    <li>
+                        <a href="{{{ action('HomeController@showContact')}}}">Contact</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

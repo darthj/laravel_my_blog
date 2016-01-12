@@ -17,13 +17,13 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="img-responsive img-full" src="img/codeup.png" alt="">
+                                <img class="img-responsive center-block " src="img/desktop.jpg" alt="">
                             </div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="img/CCU.png" alt="">
+                                <img class="img-responsive center-block " src="img/desktop.jpg" alt="">
                             </div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="img/harvard.png" alt="">
+                                <img class="img-responsive center-block " src="img/desktop.jpg" alt="">
                             </div>
                         </div>
 
@@ -53,7 +53,7 @@
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">Build a website
+                    <h2 class="intro-text text-center">Building websites
                         <strong>worth visiting</strong>
                     </h2>
                     <hr>
