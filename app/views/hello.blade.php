@@ -1,5 +1,6 @@
 @extends('layouts.master')
 
+
 @section('content')
  <div class="container">
 
@@ -38,13 +39,13 @@
                     <h2 class="brand-before">
                         <small>Welcome to</small>
                     </h2>
-                    <h1 class="brand-name">The J Blog</h1>
-                    <hr class="tagline-divider">
+                    <h1 class="brand-name">beSpoke Software Solutions</h1>
+                    {{-- <hr class="tagline-divider">
                     <h2>
                         <small>By
                             <strong>beSpoke Software Solutions</strong>
                         </small>
-                    </h2>
+                    </h2> --}}
                 </div>
             </div>
         </div>
@@ -53,37 +54,18 @@
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">Building websites
-                        <strong>worth visiting</strong>
-                    </h2>
+                    <h2 class="intro-text text-center">Building websites that make you look good</h2>
                     <hr>
-                    <img class="img-responsive img-border img-left" src="img/intro-pic.jpg" alt="">
+                    {{-- <img class="img-responsive img-border img-left" src="img/brogues.jpg" alt=""> --}}
                     <hr class="visible-xs">
-                    <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
-                    <p>A huge thanks to <a href="http://join.deathtothestockphoto.com/" target="_blank">Death to the Stock Photo</a> for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    <p>Bespoke -- custom made.  At beSpoke we build web applications to suit your business presence on the web.  We pecialize in making you look good.  Just like a tailor would make your suit to fit just you, beSpoke customizes the leading technology to make your site attractive and make people want to visit and stay a while. We focus on the client's needs and desired functionality and style. </p>
+                    <p>Please look around at some of the sites and projects we have worked on. </p>
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">Beautiful boxes
-                        <strong>to showcase your content</strong>
-                    </h2>
-                    <hr>
-                    <p>Use as many boxes as you like, and put anything you want in them! They are great for just about anything, the sky's the limit!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                </div>
-            </div>
-        </div>
-
     </div>
     <!-- /.container -->
 
-
-
-
 @stop
+
+

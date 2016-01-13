@@ -31,4 +31,3 @@ Route::get('orm-test', function ()
 {
  	// test code
 });
-

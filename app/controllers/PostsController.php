@@ -32,25 +32,8 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make(Input::all(), Post::$rules);
-		
-		if ($validator->fails()) {
-			return Redirect::back()->withInput()->withErrors($validator); 
-		} else {
-
-			$post = new Post();
-			$post->title = Input::get('title');
-			$post->content = Input::get('content');
-			$post->user_id = Input::get('user_id');
-
-			$result = $post->save();
-
-			if($result){
-				return Redirect::action('PostsController@index');
-			} else {
-				return Redirect::back()->withInput;
-			}
-		}
+		$post = new Post();
+		return $this->validateAndSave($post);
 	}
 
 
@@ -63,6 +46,10 @@ class PostsController extends \BaseController {
 	public function show($id)
 	{
 		$post = Post::find($id);
+		if(!$post){
+			Session::flash('errorMessage', 'This post does not exist.');
+			return Redirect::action('PostsController@index');
+		}
 		return View::make('posts.show')->with('post', $post);
 	} 
 
@@ -89,11 +76,15 @@ class PostsController extends \BaseController {
 	public function update($id)
 	{
 		$post = Post::find($id);
-		$post->title = Input::get('title');
-		$post->content = Input::get('content');
-		$post->save();
 
-		return View::make('posts.show')->with('post', $post);
+		return $this->validateAndSave($post);	
+
+		// $post = Post::find($id);
+		// $post->title = Input::get('title');
+		// $post->content = Input::get('content');
+		// $post->save();
+
+		// return View::make('posts.show')->with('post', $post);
 	}
 
 
@@ -107,7 +98,31 @@ class PostsController extends \BaseController {
 	{
 		$post = Post::find($id);
 		$post->delete();
+		Session::flash('successMessage', 'Your delete was successful.');
+		return Redirect::action('PostsController@index');
 	}
 
+	protected function validateAndSave($post){
+		$validator = Validator::make(Input::all(), Post::$rules);
+		
+		if ($validator->fails()) {
+			return Redirect::back()->withInput()->withErrors($validator); 
+		} else {
+
+			$post = new Post();
+			$post->title = Input::get('title');
+			$post->content = Input::get('content');
+			$post->user_id = 1;
+
+			$result = $post->save();
+
+			if($result){
+				Session::flash('successMessage', 'Your post was saved.');
+				return Redirect::action('PostsController@show', $post->id);
+			} else {
+				return Redirect::back()->withInput;
+			}
+		}
+	}
 
 }
