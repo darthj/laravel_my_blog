@@ -49,6 +49,14 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
+	return View::make('error.error');
+});
+
+// 404 page maker
+
+App::missing(function($exception)
+{
+    return Response::view('error.missing', array(), 404);
 });
 
 /*

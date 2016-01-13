@@ -9,6 +9,7 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
+		
 		$posts = Post::paginate(4);
 		return View::make('posts.index')->with('posts', $posts);
 	}
@@ -33,6 +34,8 @@ class PostsController extends \BaseController {
 	public function store()
 	{
 		$post = new Post();
+		Log::info('This is some useful information.', Input::all());
+
 		return $this->validateAndSave($post);
 	}
 
@@ -47,8 +50,7 @@ class PostsController extends \BaseController {
 	{
 		$post = Post::find($id);
 		if(!$post){
-			Session::flash('errorMessage', 'This post does not exist.');
-			return Redirect::action('PostsController@index');
+			App::abort(404);
 		}
 		return View::make('posts.show')->with('post', $post);
 	} 
