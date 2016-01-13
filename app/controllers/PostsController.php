@@ -49,6 +49,7 @@ class PostsController extends \BaseController {
 	public function show($id)
 	{
 		$post = Post::find($id);
+		
 		if(!$post){
 			App::abort(404);
 		}

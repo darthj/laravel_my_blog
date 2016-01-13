@@ -2,6 +2,6 @@
 
 @section('content')
 	<div class="container">
-		<img src="/img/notfound.jpg">
+		<img src="/img/notfound.gif">
 	</div>
 @stop
