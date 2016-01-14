@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration {
 			$table->string('email', 100)->unique();
 			$table->date('birthday');
 			$table->string('phone_number',20)->nulllable();
+			$table->rememberToken();
 			$table->timestamps();
 
 		});

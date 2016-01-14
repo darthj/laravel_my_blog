@@ -2,6 +2,13 @@
 
 class PostsController extends \BaseController {
 
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->beforeFilter('auth', array('except'=> array('index','show')));
+		//$this->beforeFilter('auth', array('only'=> array('create','store','destroy','edit')));
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -10,7 +17,7 @@ class PostsController extends \BaseController {
 	public function index()
 	{
 		
-		$posts = Post::paginate(4);
+		$posts = Post::with('user')->paginate(4);
 		return View::make('posts.index')->with('posts', $posts);
 	}
 
@@ -115,7 +122,7 @@ class PostsController extends \BaseController {
 			$post = new Post();
 			$post->title = Input::get('title');
 			$post->content = Input::get('content');
-			$post->user_id = 1;
+			$post->user_id = Auth::id();
 
 			$result = $post->save();
 

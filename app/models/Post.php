@@ -13,9 +13,14 @@ class Post extends BaseModel
 	    'content'    => 'required|max:10000'
 	);
 
-	public function setTitleAttributes($value)
+	public function setTitleAttribute($value)
 	{
-		$this->atrributes['title'] = $value;
-		$this->attributes['slug']  = Str::slug($value);
+		$this->attributes['title'] = $value;
+		$this->attributes['slug']  = uniqid().'-'.Str::slug($value);
+	}
+
+	public function user()
+	{
+		return $this->belongsTo('User');
 	}
 }

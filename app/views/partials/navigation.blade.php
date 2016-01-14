@@ -25,10 +25,19 @@
                         <a href="{{{ action('PostsController@index')}}}">Blog</a>
                     </li>
                     <li>
-                        <a href="{{{ action('PostsController@create')}}}">Create</a>
+                        <a href="{{{ action('HomeController@showContact')}}}">Contact</a>
                     </li>
                     <li>
-                        <a href="{{{ action('HomeController@showContact')}}}">Contact</a>
+                        @if(Auth::check())
+                        <a href="{{{ action('PostsController@create')}}}">Create</a>
+                        @endif
+                    </li>
+                    <li>
+                        @if(!Auth::check())
+                        <a href="{{{ action('HomeController@getLogin')}}}">Login</a>
+                        @else
+                        <a href="{{{ action('HomeController@getLogout')}}}">Logout</a>
+                        @endif
                     </li>
                 </ul>
             </div>

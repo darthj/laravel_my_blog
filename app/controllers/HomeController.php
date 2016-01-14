@@ -52,4 +52,32 @@ class HomeController extends BaseController {
 
 		return View::make('roll-dice')->with($data);
 	}
+
+	public function getLogin()
+	{
+		return View::make('login');
+	}
+	
+	public function postLogin()
+	{
+		$email= Input::get('email');
+		$password= Input::get('password');
+
+		if (Auth::attempt(array('email' => $email, 'password' => $password))) 
+		{
+	    	Session::flash('successMessage', 'You are now logged in.');
+	    	return Redirect::intended('/posts');
+		} else {
+	    Session::flash('errorMessage', 'Login failed. Please try again.');
+	    return Redirect::back();
+		}
+	}
+	
+	public function getLogout()
+	{
+		Auth::logout();
+		Session::flash('successMessage', 'You are now logged out.');
+		return Redirect::action('HomeController@showWelcome');
+	}
+
 }
