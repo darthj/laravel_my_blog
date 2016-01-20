@@ -58,7 +58,7 @@
                     <hr>
                     {{-- <img class="img-responsive img-border img-left" src="img/brogues.jpg" alt=""> --}}
                     <hr class="visible-xs">
-                    <p>Bespoke -- custom made.  At beSpoke we build web applications to suit your business presence on the web.  We pecialize in making you look good.  Just like a tailor would make your suit to fit just you, beSpoke customizes the leading technology to make your site attractive and make people want to visit and stay a while. We focus on the client's needs and desired functionality and style. </p>
+                    <p>Bespoke -- custom made.  At beSpoke we build web applications to suit your business presence on the web.  We specialize in making you look good.  Just like a tailor would make your suit to fit just you, beSpoke customizes the leading technology around the client's needs and desired functionality and style.We focus on making your site attractive and user friendly.</p>
                     <p>Please look around at some of the sites and projects we have worked on. </p>
                 </div>
             </div>

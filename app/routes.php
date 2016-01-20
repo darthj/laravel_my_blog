@@ -35,3 +35,8 @@ Route::get('orm-test', function ()
 {
  	// test code
 });
+Route::resource('tags', 'TagsController');
+
+Route::get('/contact', 'HomeController@getContact');
+Route::post('/contact', 'HomeController@doContact');
+Route::get('/email-sent', 'HomeController@getEmailSentPage');

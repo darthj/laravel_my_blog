@@ -5,14 +5,20 @@
 		{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
 		
 		  <div class="form-group">
-		    {{ $errors->first('title', '<span class="help-block">:message</span>') }}
-		    {{ Form::label('title', 'Title') }}
-			{{ Form::text('title', null, array('placeholder'=> 'Type Title Here', 'class'=>'form-control')) }}
+		    {{ Form::label('name', 'Name') }}
+			{{ Form::text('name', null, array('placeholder'=> 'Type name Here', 'class'=>'form-control')) }}
 		  </div>
 		  <div class="form-group">
-		    {{ $errors->first('content', '<span class="help-block">:message</span>') }}
-		    {{ Form::label('content', 'Content') }}
-			{{ Form::textarea('content', null, array('placeholder'=> 'Type Content Here', 'class'=>'form-control')) }} 
+		    {{ Form::label('email', 'Email') }}
+			{{ Form::text('email', null, array('placeholder'=> 'Type email Here', 'class'=>'form-control')) }}
+		  </div>
+		  <div class="form-group">
+		    {{ Form::label('phone', 'Phone') }}
+			{{ Form::text('phone', null, array('placeholder'=> 'Type phone Here', 'class'=>'form-control')) }}
+		  </div>
+		  <div class="form-group">
+		    {{ Form::label('message', 'message') }}
+			{{ Form::text('message', null, array('placeholder'=> 'Type message Here', 'class'=>'form-control')) }}
 		  </div>
 		  <button type="submit" class="btn btn-default">Submit</button>
 		

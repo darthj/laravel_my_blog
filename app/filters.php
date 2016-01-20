@@ -83,6 +83,8 @@ Route::filter('guest', function()
 
 Route::filter('csrf', function()
 {
+	$token = Request::ajax() ? Request::header('X-Csrf-Token') : Input::get('_token');
+	
 	if (Session::token() !== Input::get('_token'))
 	{
 		throw new Illuminate\Session\TokenMismatchException;
